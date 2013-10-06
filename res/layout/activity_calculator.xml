@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".CalculatorActivity" >
+
+    <EditText
+        android:id="@+id/etTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnTwentyPct"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnFifteenPct"
+        android:layout_alignBottom="@+id/btnFifteenPct"
+        android:layout_toRightOf="@+id/btnFifteenPct"
+        android:minWidth="60dp"
+        android:text="@string/twentypct_label"
+        android:onClick="showTip"
+        android:tag="0.2" />
+
+    <Button
+        android:id="@+id/btnFifteenPct"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnTenPct"
+        android:layout_alignBottom="@+id/btnTenPct"
+        android:layout_centerHorizontal="true"
+        android:minWidth="60dp"
+        android:text="@string/fifteenpct_label"
+        android:onClick="showTip"
+        android:tag="0.15" />
+
+    <Button
+        android:id="@+id/btnTenPct"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etTransaction"
+        android:layout_marginTop="87dp"
+        android:layout_toLeftOf="@+id/btnFifteenPct"
+        android:minWidth="60dp"
+        android:text="@string/tenpct_label"
+        android:onClick="showTip"
+        android:tag="0.1" />
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btnFifteenPct"
+        android:layout_below="@+id/btnFifteenPct"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/tip_label" />
+
+    <TextView
+        android:id="@+id/tvTipValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTip"
+        android:layout_alignBottom="@+id/tvTip"
+        android:layout_toRightOf="@+id/tvTip" />
+
+</RelativeLayout>
