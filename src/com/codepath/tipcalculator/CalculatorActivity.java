@@ -33,11 +33,10 @@ public class CalculatorActivity extends Activity {
     }
     
     public void showTip(View v) {
-    	InputMethodManager imm = (InputMethodManager)getSystemService(
-    		      Context.INPUT_METHOD_SERVICE);
-    		imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-    	
     	float transaction;
+    	
+    	InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(v.getWindowToken(), 0);    	
     	
     	try {
     		transaction = Float.parseFloat(etTransaction.getText().toString());
