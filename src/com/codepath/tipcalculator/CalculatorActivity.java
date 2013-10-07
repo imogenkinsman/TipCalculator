@@ -9,6 +9,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CalculatorActivity extends Activity {
 	private EditText etTransaction;
@@ -40,12 +41,12 @@ public class CalculatorActivity extends Activity {
     	
     	try {
     		transaction = Float.parseFloat(etTransaction.getText().toString());
+        	float percent = Float.parseFloat(v.getTag().toString());
+        	tvTipValue.setText("$" + String.format("%.2f", transaction * percent));
     	} catch (NumberFormatException e) {
-    		transaction = 0;
-    	}
+    		Toast.makeText(getApplicationContext(), "Enter a number", Toast.LENGTH_SHORT).show();
+		}
     	
-    	float percent = Float.parseFloat(v.getTag().toString());
-    	tvTipValue.setText("$" + String.format("%.2f", transaction * percent));
     }
     
 }
