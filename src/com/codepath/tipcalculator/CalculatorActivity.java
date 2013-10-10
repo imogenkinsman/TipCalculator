@@ -3,6 +3,7 @@ package com.codepath.tipcalculator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.inputmethod.EditorInfo;
@@ -59,7 +60,7 @@ public class CalculatorActivity extends Activity {
 					boolean fromUser) {
 				tvTipPercent.setText(String.valueOf(progress) + '%');
 				
-				if (etTransaction.getText().toString().trim().length() > 0) {
+				if (!TextUtils.isEmpty(etTransaction.getText().toString())) {
 					updateTipValue();
 				}
 			}
